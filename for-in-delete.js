@@ -79,11 +79,12 @@ function greaterThan10(obj){
 
 //Code Here
 function double(obj){
-  for (var key in obj){
-    obj[key] * 2
+  for (var prop in obj){
+    obj[prop] = obj[prop] * 2
   }
   return obj
 }
+
 
 
 ////////// PROBLEM 4 //////////
@@ -99,12 +100,10 @@ function double(obj){
 //Code Here
 function secrets(obj){
   let beQuiet = ''
-  var toSearch = 'sh'
   for (var key in obj){
-    if(obj[key].indexOf(toSearch) != -1){
+    if(key.startsWith('sh')){
       beQuiet += obj[key]
     }
-
   }
   return beQuiet 
 }
@@ -138,6 +137,10 @@ function secrets(obj){
 */
 
 //Code Here
+function removePassword(obj){
+  delete obj['password']
+  return obj 
+}
 
 
 
@@ -157,7 +160,11 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+for (var key in deleteTheBigNumbers){
+  if (deleteTheBigNumbers[key] > 100){
+  delete deleteTheBigNumbers[key]
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -170,7 +177,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function startsWithK(obj){
+  for (var key in obj){
+    if (key.startsWith('k')){
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -185,5 +199,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-
+function hiddenTreasure(obj){
+  for (var key in obj){
+    if (!obj[key].includes('treasure')){
+      delete obj[key]
+    }
+  }
+  return obj 
+}
 
