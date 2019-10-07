@@ -51,7 +51,18 @@ var employees = [
 */
 
 //Code Here
-
+function employeeUpdater(){
+  for (var prop in employees){
+    if (employees[prop] === "Theo"){
+      delete employees[prop]
+    }
+    if (employees[prop] === "Lorie"){
+      employees.department = "HR"
+    }
+  }
+  return employees 
+  
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -69,7 +80,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+removeDuplicates(array){
+  let uniqArray = []
+  for (let i = 0; i < array.length; i++){
+    for (let j = 1; j < array.length - 1; j++) {
+      if (array[i] === array[j]){
+        uniqArray.push(array[i])
+      }
+    }
+  }
+  return uniqArray
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -97,8 +118,10 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends['0'].activities.splice(1,1)
+var fluffy2ndFriend = cat.catFriends['1'].name 
+
+
 
 
 
@@ -139,7 +162,13 @@ var myCar = {
 */
 
 //Code Here
-
+function recordCleaner(){
+  for (var prop in accidents){
+    if (accidents('atFaultForAccident') === true){
+      accidents.atFaultForAccidents.splice(1,0, false)
+    }
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -158,5 +187,7 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+function looper(){
+  
+}
 
