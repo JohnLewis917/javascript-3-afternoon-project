@@ -52,12 +52,12 @@ var employees = [
 
 //Code Here
 function employeeUpdater(){
-  for (var prop in employees){
-    if (employees[prop] === "Theo"){
-      delete employees[prop]
+  for (var key in employees){
+    if (employees[key] === "Theo"){
+      delete employees[key]
     }
-    if (employees[prop] === "Lorie"){
-      employees.department = "HR"
+    if (employees[key] === "Lorie"){
+      employees[key].department = "HR"
     }
   }
   return employees 
@@ -80,16 +80,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-removeDuplicates(array){
-  let uniqArray = []
+function removeDuplicates(array){
   for (let i = 0; i < array.length; i++){
-    for (let j = 1; j < array.length - 1; j++) {
+    for (let j = i + 1; j < array.length; j++) {
       if (array[i] === array[j]){
-        uniqArray.push(array[i])
+        array.splice(i,1)
       }
     }
   }
-  return uniqArray
+  return array
 }
 
 
@@ -118,7 +117,7 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity = cat.catFriends['0'].activities.splice(1,1)
+var grumpyActivity = cat.catFriends['0'].activities.splice(0,1)
 var fluffy2ndFriend = cat.catFriends['1'].name 
 
 
@@ -163,8 +162,8 @@ var myCar = {
 
 //Code Here
 function recordCleaner(){
-  for (var prop in accidents){
-    if (accidents('atFaultForAccident') === true){
+  for (var key in accidents){
+    if (accidents[i].atFaultForAccident === true){
       accidents.atFaultForAccidents.splice(1,0, false)
     }
   }
