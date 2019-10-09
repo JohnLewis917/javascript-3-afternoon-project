@@ -52,12 +52,12 @@ var employees = [
 
 //Code Here
 function employeeUpdater(){
-  for (var key in employees){
-    if (employees[key] === "Theo"){
-      delete employees[key]
+  for (let i=0; i < employees.length; i++){
+    if (employees[i]['firstName'] === "Theo"){
+      employees.splice(i,1)
     }
-    if (employees[key] === "Lorie"){
-      employees[key].department = "HR"
+    if (employees[i]['firstName'] === "Lorie"){
+      employees[i].department = "HR"
     }
   }
   return employees 
@@ -81,10 +81,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 
 //Code Here
 function removeDuplicates(array){
-  for (let i = 0; i < array.length; i++){
-    for (let j = i + 1; j < array.length; j++) {
+  for(let i = array.length; i >= 0; i--){
+    for(let j = i-1; j >= 0; j--){
       if (array[i] === array[j]){
-        array.splice(i,1)
+         array.splice(j, 1)
       }
     }
   }
@@ -117,7 +117,7 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity = cat.catFriends['0'].activities.splice(0,1)
+var grumpyActivity = cat.catFriends['0'].activities['1']
 var fluffy2ndFriend = cat.catFriends['1'].name 
 
 
@@ -162,11 +162,7 @@ var myCar = {
 
 //Code Here
 function recordCleaner(){
-  for (var key in accidents){
-    if (accidents[i].atFaultForAccident === true){
-      accidents.atFaultForAccidents.splice(1,0, false)
-    }
-  }
+  myCar.accidents.forEach(accident => accident.atFaultForAccident = false)
 }
 
 
